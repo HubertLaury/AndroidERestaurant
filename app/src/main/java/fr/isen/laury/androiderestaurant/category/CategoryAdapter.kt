@@ -5,7 +5,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+
 import fr.isen.laury.androiderestaurant.databinding.DishCellBinding
 
 class CategoryAdapter(private val entrees: List<String>): RecyclerView.Adapter<CategoryAdapter.DishViewHolder>() {
@@ -22,6 +22,6 @@ class CategoryAdapter(private val entrees: List<String>): RecyclerView.Adapter<C
         }
 
 class DishViewHolder(dishBinding: DishCellBinding): RecyclerView.ViewHolder(dishBinding.root) {
-        val titleView: TextView = dishBinding.dishTitle
+        val titleView: TextView = dishBinding.title2
         }
         }
