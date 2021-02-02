@@ -1,4 +1,4 @@
 package fr.isen.laury.androiderestaurant.detail
 
-class DetailViewFragment {
+class DishCellClickListenner {
 }
