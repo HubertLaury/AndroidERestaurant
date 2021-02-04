@@ -1,4 +1,6 @@
-package fr.isen.laury.androiderestaurant.basket
+package fr.isen.laury.androiderestaurant.network
 
-class BasketItem {
+import fr.isen.laury.androiderestaurant.network.Dish
+
+class BasketItem(val dish: Dish, var itemCount: Int) {
 }
