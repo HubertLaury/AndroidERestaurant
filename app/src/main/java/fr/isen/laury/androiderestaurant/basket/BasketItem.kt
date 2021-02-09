@@ -1,4 +1,4 @@
-package fr.isen.laury.androiderestaurant.network
+package fr.isen.laury.androiderestaurant.basket
 
 import fr.isen.laury.androiderestaurant.network.Dish
 

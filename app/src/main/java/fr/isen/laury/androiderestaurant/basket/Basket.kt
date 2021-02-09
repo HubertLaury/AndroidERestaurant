@@ -1,9 +1,11 @@
-package fr.isen.laury.androiderestaurant.network
+package fr.isen.laury.androiderestaurant.basket
 
 import android.content.Context
+import android.content.SharedPreferences
 import com.google.gson.GsonBuilder
 import java.io.File
 import java.io.Serializable
+import fr.isen.laury.androiderestaurant.detail.DetailActivity
 
 class Basket (val items: MutableList<BasketItem>): Serializable {
 
@@ -27,6 +29,9 @@ fun addItem(item: BasketItem) {
         items.add(item)
     }
 }
+    fun clear() {
+        items.clear()
+    }
 
 fun save(context: Context) {
     val jsonFile = File(context.cacheDir.absolutePath + BASKET_FILE)
@@ -43,9 +48,8 @@ companion object {
         if(jsonFile.exists()) {
             val json = jsonFile.readText()
             return GsonBuilder().create().fromJson(json, Basket::class.java)
-        } else {
-            return Basket(mutableListOf())
         }
+            return Basket(mutableListOf())
     }
 
     const val BASKET_FILE = "basket.json"

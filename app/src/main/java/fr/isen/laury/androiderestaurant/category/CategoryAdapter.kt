@@ -1,27 +1,44 @@
-package fr.isen.laury.androiderestaurant
+package fr.isen.laury.androiderestaurant.category
 
+import android.annotation.SuppressLint
 import android.widget.TextView
-
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-
+import android.widget.ImageView
+import com.squareup.picasso.Picasso
 import fr.isen.laury.androiderestaurant.databinding.DishCellBinding
+import fr.isen.laury.androiderestaurant.detail.DishCellClickListener
+import fr.isen.laury.androiderestaurant.network.Dish
 
-class CategoryAdapter(private val entrees: List<String>): RecyclerView.Adapter<CategoryAdapter.DishViewHolder>() {
+class CategoryAdapter(private val entries: List<Dish>,
+                      private val cellClickListener: DishCellClickListener):
+                      RecyclerView.Adapter<CategoryAdapter.DishViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
-        return DishViewHolder(DishCellBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+                return DishViewHolder(DishCellBinding.inflate(LayoutInflater.from(parent.context), parent, false))
         }
 
-        override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
-        holder.titleView.text = entrees[position]
+    @SuppressLint("SetTextI18n")
+override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
+        holder.dishTitle.text = entries[position].name.take(40)
+        holder.dishPrice.text = "${entries[position].prices[0].price}€"
+        if (entries[position].images[0].isNotEmpty()) {
+            Picasso.get().load(entries[position].images[0]).into(holder.dishImageView);
         }
+        holder.layout.setOnClickListener {
+            cellClickListener.onCellClickListener(entries[position])
+        }
+}
+override fun getItemCount(): Int {
+        return entries.count()
+}
 
-        override fun getItemCount(): Int {
-        return entrees.count()
-        }
+class DishViewHolder (dishBinding: DishCellBinding): RecyclerView.ViewHolder(dishBinding.root) {
 
-class DishViewHolder(dishBinding: DishCellBinding): RecyclerView.ViewHolder(dishBinding.root) {
-        val titleView: TextView = dishBinding.title2
-        }
-        }
+                val dishTitle: TextView= dishBinding.dishTitle
+                val dishPrice: TextView= dishBinding.dishPrice
+                val dishImageView: ImageView= dishBinding.dishImageView
+                val layout: CardView = dishBinding.root
+    }
+ }

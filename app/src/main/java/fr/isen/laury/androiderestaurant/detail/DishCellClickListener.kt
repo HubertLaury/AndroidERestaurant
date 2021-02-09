@@ -1,4 +1,7 @@
 package fr.isen.laury.androiderestaurant.detail
 
-class DishCellClickListenner {
+import fr.isen.laury.androiderestaurant.network.Dish
+
+interface DishCellClickListener {
+    fun onCellClickListener(data: Dish)
 }

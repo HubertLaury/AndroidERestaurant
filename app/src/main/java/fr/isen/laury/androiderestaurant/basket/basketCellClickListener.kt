@@ -1,4 +1,5 @@
 package fr.isen.laury.androiderestaurant.basket
 
-class basketCellClickListener {
+interface BasketCellClickListener {
+    fun onDeleteItem(basketItem: BasketItem)
 }

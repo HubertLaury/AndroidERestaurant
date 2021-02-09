@@ -1,3 +1,32 @@
 <resources>
-    <string name="app_name">AndroidERestaurant</string>
+    <string name="app_name">Android restaurant</string>
+    <string name="hello">Bienvenue\nchez</string>
+    <string name="droid_restaurant">Droid Restaurant</string>
+    <string name="droid_logo"> </string>
+
+    <string name="entree">Entrées</string>
+    <string name="plat">Plats</string>
+    <string name="dessert">Desserts</string>
+    <string name="ingredients">Ingredients</string>
+
+    <string name="toast_content">Contenu du toast</string>
+    <string name="category">category</string>
+    <string name="textview">TextView</string>
+
+    <string name="total">Total</string>
+    <string name="basket_validation">Rajouté au panier</string>
+    <string name="basket">Panier</string>
+    <string name="order">Finaliser commande</string>
+    <string name="quantity">Quantité :</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="register">Créer un compte</string>
+    <string name="firstname">Prénom</string>
+    <string name="lastname">Nom</string>
+    <string name="password">Mot de passe</string>
+    <string name="adresse">Adresse</string>
+    <string name="email">Email</string>
+    <string name="login">Se connecter</string>
+    <string name="accountexists">J\'ai dèja un compte</string>
+
 </resources>

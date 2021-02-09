@@ -1,8 +1,9 @@
-package fr.isen.laury.androiderestaurant.category
+package fr.isen.laury.androiderestaurant
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import fr.isen.laury.androiderestaurant.category.CategoryActivity
 import fr.isen.laury.androiderestaurant.category.ItemType
 import fr.isen.laury.androiderestaurant.databinding.ActivityHomeBinding
 
@@ -16,15 +17,15 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.entree.setOnClickListener {
+        binding.entriesTextView.setOnClickListener {
             statCategoryActivity(ItemType.ENTREE)
         }
 
-        binding.plat.setOnClickListener {
+        binding.dishesTextView.setOnClickListener {
             statCategoryActivity(ItemType.PLAT)
         }
 
-        binding.dessert.setOnClickListener {
+        binding.dessertTextView.setOnClickListener {
             statCategoryActivity(ItemType.DESSERT)
         }
     }
